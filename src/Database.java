@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Database {
     public static void main(String[] args) throws SQLException {
-        
         try {
+            //Finder class Driver i den importede mappe (Mysql-connector-java (External Libaries))
             Class.forName("com.mysql.cj.jdbc.Driver");
 
         } catch (ClassNotFoundException e) {
@@ -16,7 +16,9 @@ public class Database {
 
         Statement statement = connection.createStatement();
 
+
         //String sql1 = "SELECT * FROM person";
+        System.out.print("Write MySQL Query: ");
         String sql = sc.nextLine();
 
         ResultSet results = statement.executeQuery(sql);
